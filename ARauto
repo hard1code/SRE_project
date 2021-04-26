@@ -171,3 +171,16 @@ ADDROUTE
 echo "chmod route_set.start"
 CHROUTE
 }
+
+
+
+
+
+
+tim's code #實現同時登入SSH免密
+#!/bin/sh
+sudo apk add expect
+echo '
+StrictHostKeyChecking no
+' | sudo tee -a /etc/ssh/ssh_config
+ssh-keygen -t rsa -P ''
